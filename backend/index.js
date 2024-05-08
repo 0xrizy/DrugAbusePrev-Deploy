@@ -548,4 +548,42 @@ app.get("/api/allResults", authMiddleware, async (req, res) => {
   }
 });
 
-app.get('')
+
+app.post('/api/book-session', async (req, res) => {
+  try {
+    const apiKey = process.env.WHEREBY_API_KEY;
+    const endDate = new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString();
+
+    const response = await fetch('https://api.whereby.dev/v1/meetings', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${apiKey}`,
+      },
+      body: JSON.stringify({
+        endDate,
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error('Failed to create meeting');
+    }
+
+    const data = await response.json();
+    const { meetingId, roomUrl } = data;
+
+    // Send email
+    const msg = {
+      to: '20bcs099@nith.ac.in',
+      from: 'rizul.thakur1@gmail.com', 
+      subject: 'New Meeting Booked',
+      text: `Meeting ID: ${meetingId}\nRoom URL: ${roomUrl}`,
+    };
+    await sgMail.send(msg);
+
+    res.status(200).json({ meetingId, roomUrl });
+  } catch (error) {
+    console.error('Error booking session:', error);
+    res.status(500).json({ error: 'Error booking session' });
+  }
+});
