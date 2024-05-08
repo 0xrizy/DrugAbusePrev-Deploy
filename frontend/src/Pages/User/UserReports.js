@@ -98,7 +98,7 @@ export default function UserReports() {
     const categories = ["Meditation", "Exercise", "Sleep", "Sober"];
   
     return (
-      <div className="grid grid-cols-2 gap-4 text-white text-sm ">
+      <div className="grid grid-cols-2 gap-4 text-white text-sm  ">
         {categories.map((category, index) => (
           <div
             key={category}

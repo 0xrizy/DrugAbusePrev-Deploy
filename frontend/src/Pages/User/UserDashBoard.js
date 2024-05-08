@@ -72,6 +72,12 @@ export default function UserDashboard() {
                 {weekday}
               </span>
             </h2>
+            <Link
+              to="/bookSession"
+              className="text-center bg-gradient-to-r from-teal-500 to-teal-300 hover:from-teal-400 hover:to-teal-300 text-white font-bold py-2 px-4 rounded-full w-1/4 max-w-md"
+            >
+              Book a session with us
+            </Link>
           </div>
 
           <div className="flex flex-col justify-center items-center space-y-8 p-8 w-full md:w-1/2">
