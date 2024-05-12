@@ -31,6 +31,7 @@ import AnxietyQuiz from "./Pages/User/AnxietyQuiz";
 import AnxietyResultPage from "./Pages/User/AnxietyResultPage";
 import AnxietyReport from "./Pages/User/AnxietyReport";
 import BookSession from "./Pages/User/BookSession";
+import TweetClassification from "./Pages/TweetClassification";
 function App() {
   const [isAdminLoggedIn, setAdminLoggedIn] = useState(
     localStorage.getItem("isAdminLoggedIn") === "true"
@@ -88,6 +89,7 @@ function App() {
         <Route path="/anxietyresultpage" element={<AnxietyResultPage />} />
         <Route path="/anxietyReport" element={<AnxietyReport />} />
         <Route path="/bookSession" element={<BookSession />} />
+        <Route path="/tweetClassification" element={<TweetClassification/>}/>
       </Routes>
       {!isAdminLoggedIn && !isAdminPage && <Footer />}
     </Router>
