@@ -33,7 +33,7 @@ export default function UserQuiz() {
 
       // Send quiz responses with token in headers
       await axios
-        .post("http://localhost:3001/api/quiz", quizResponses, config)
+        .post("https://drugabuseprev-deploy.onrender.com/api/quiz", quizResponses, config)
         .then((response) => {
           console.log("Quiz submitted successfully:", response.data);
           

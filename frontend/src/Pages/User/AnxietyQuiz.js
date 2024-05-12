@@ -53,7 +53,7 @@ function AnxietyQuiz() {
   const fetchUserName = async (token) => {
     try {
       const response = await axios.get(
-        "http://localhost:3001/api/getUserName",
+        "https://drugabuseprev-deploy.onrender.com/api/getUserName",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -126,7 +126,7 @@ function AnxietyQuiz() {
       };
 
       const response = await axios.post(
-        "http://localhost:3001/api/anxietyTestResults",
+        "https://drugabuseprev-deploy.onrender.com/api/anxietyTestResults",
         postData,
         {
           headers: {

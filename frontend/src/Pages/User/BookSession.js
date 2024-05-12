@@ -37,7 +37,7 @@ const BookSession = () => {
     try {
       // Send backend request to get session data
       const response = await axios.post(
-        "http://localhost:3001/api/book-session"
+        "https://drugabuseprev-deploy.onrender.com/api/book-session"
       );
       const newSessionData = response.data;
       setSessionData(newSessionData);

@@ -26,7 +26,7 @@ function AdminHome() {
 
   useEffect(() => {
     // Fetch reports per day data
-    axios.get('http://localhost:3001/api/reportsPerDay').then((response) => {
+    axios.get('https://drugabuseprev-deploy.onrender.com/api/reportsPerDay').then((response) => {
       // Sort the reportsPerDay array by date in ascending order
       const sortedReports = response.data.sort((a, b) => {
         const dateA = new Date(a.date);
@@ -42,15 +42,15 @@ function AdminHome() {
     });
 
     // Fetch number of resolved reports
-    axios.get('http://localhost:3001/api/totalresolvedreports').then((response) => {
+    axios.get('https://drugabuseprev-deploy.onrender.com/api/totalresolvedreports').then((response) => {
       setResolvedReports(response.data.length);
     });
 
     // Fetch number of pending reports
-    axios.get('http://localhost:3001/api/totalpendingreports').then((response) => {
+    axios.get('https://drugabuseprev-deploy.onrender.com/api/totalpendingreports').then((response) => {
       setPendingReports(response.data.length);
     });
-    axios.get('http://localhost:3001/api/totalreports').then((response) =>{
+    axios.get('https://drugabuseprev-deploy.onrender.com/api/totalreports').then((response) =>{
       setTotalReports(response.data.length);
   });
  

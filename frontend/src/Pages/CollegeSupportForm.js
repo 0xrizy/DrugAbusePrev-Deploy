@@ -22,7 +22,7 @@ const CollegeSupportForm = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:3001/api/college-support",
+        "https://drugabuseprev-deploy.onrender.com/api/college-support",
         formData
       );
       console.log("Form submitted successfully:", response.data);

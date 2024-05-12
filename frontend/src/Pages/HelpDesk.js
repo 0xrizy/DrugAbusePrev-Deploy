@@ -19,7 +19,7 @@ const HelpDesk = () => {
 
   const fetchPosts = async () => {
     try {
-      const response = await axios.get("http://localhost:3001/api/posts");
+      const response = await axios.get("https://drugabuseprev-deploy.onrender.com/api/posts");
       console.log("Posts response:", response.data);
       setPosts(response.data);
     } catch (error) {
@@ -29,7 +29,7 @@ const HelpDesk = () => {
 
   const handlePostSubmit = async () => {
     try {
-      await axios.post("http://localhost:3001/api/posts", {
+      await axios.post("https://drugabuseprev-deploy.onrender.com/api/posts", {
         text: newPostText,
       });
       setNewPostText("");
@@ -41,7 +41,7 @@ const HelpDesk = () => {
 
   const handleLike = async (postId) => {
     try {
-      await axios.put(`http://localhost:3001/api/posts/${postId}/like`);
+      await axios.put(`https://drugabuseprev-deploy.onrender.com/api/posts/${postId}/like`);
       fetchPosts();
     } catch (error) {
       console.error("Error liking/unliking post:", error);
@@ -50,7 +50,7 @@ const HelpDesk = () => {
   const handleUnlike = async (postId) => {
     try {
       // Send a request to unlike the post
-      await axios.put(`http://localhost:3001/api/posts/${postId}/unlike`);
+      await axios.put(`https://drugabuseprev-deploy.onrender.com/api/posts/${postId}/unlike`);
   
       // Fetch the updated posts after unliking
       fetchPosts();
@@ -70,7 +70,7 @@ const HelpDesk = () => {
   const handleCommentSubmit = async (postId) => {
     try {
       await axios.post(
-        `http://localhost:3001/api/posts/${commentPostId}/comment`,
+        `https://drugabuseprev-deploy.onrender.com/api/posts/${commentPostId}/comment`,
         {
           text: commentText,
         }
@@ -84,7 +84,7 @@ const HelpDesk = () => {
   };
   const handleReadMore = async (postId) => {
     try {
-      const response = await axios.get(`http://localhost:3001/api/posts/${postId}`);
+      const response = await axios.get(`https://drugabuseprev-deploy.onrender.com/api/posts/${postId}`);
       setSelectedPost(selectedPost && selectedPost._id === postId ? null : response.data);
     } catch (error) {
       console.error("Error fetching full post:", error);

@@ -33,7 +33,7 @@ export default function UserDashboard() {
   const fetchUserName = async (token) => {
     try {
       const response = await axios.get(
-        "http://localhost:3001/api/getUserName",
+        "https://drugabuseprev-deploy.onrender.com/api/getUserName",
         {
           headers: {
             Authorization: `Bearer ${token}`,

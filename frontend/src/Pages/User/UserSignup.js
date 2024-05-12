@@ -16,7 +16,7 @@ const UserSignup = () => {
       return;
     }
     try {
-      const response = await axios.post('http://localhost:3001/api/signup', { email, password, name });
+      const response = await axios.post('https://drugabuseprev-deploy.onrender.com/api/signup', { email, password, name });
       console.log('Signup successful!', response.data.message);
       alert(response.data.message + " \nPlease Login now");
       navigate('/userlogin');

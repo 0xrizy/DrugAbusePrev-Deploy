@@ -12,7 +12,7 @@ function TotalReports() {
 
   useEffect(() => {
     // Fetch all reports
-    axios.get('http://localhost:3001/api/totalreports').then((response) => {
+    axios.get('https://drugabuseprev-deploy.onrender.com/api/totalreports').then((response) => {
       const reports = response.data;
       setAllReports(reports);
 
@@ -28,7 +28,7 @@ function TotalReports() {
   const resolveReport = async (reportId) => {
     try {
       // Make a request to mark the report as resolved in the backend
-      await axios.put(`http://localhost:3001/api/resolveReport/${reportId}`);
+      await axios.put(`https://drugabuseprev-deploy.onrender.com/api/resolveReport/${reportId}`);
   
       // Update the local state to reflect the change
       const updatedReports = allReports.map((report) =>
@@ -47,7 +47,7 @@ function TotalReports() {
   const unresolveReport = async (reportId) => {
     try {
       // Make a request to mark the report as unresolved in the backend
-      await axios.put(`http://localhost:3001/api/unresolveReport/${reportId}`);
+      await axios.put(`https://drugabuseprev-deploy.onrender.com/api/unresolveReport/${reportId}`);
   
       // Update the local state to reflect the change
       const updatedReports = allReports.map((report) =>

@@ -10,7 +10,7 @@ const StudentSupportDetails = () => {
   useEffect(() => {
     const fetchStudentDetails = async () => {
       try {
-        const response = await axios.get("http://localhost:3001/api/student-support");
+        const response = await axios.get("https://drugabuseprev-deploy.onrender.com/api/student-support");
         setStudentDetails(response.data);
       } catch (error) {
         console.error("Error fetching student details:", error);

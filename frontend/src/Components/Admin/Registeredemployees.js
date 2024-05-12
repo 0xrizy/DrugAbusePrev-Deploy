@@ -12,7 +12,7 @@ function RegisteredEmployees() {
   useEffect(() => {
     const fetchEmployees = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/api/registeredemployees');
+        const response = await axios.get('https://drugabuseprev-deploy.onrender.com/api/registeredemployees');
         const employeeData = response.data;
         setEmployees(employeeData);
         setOriginalData(employeeData); // Set the original unfiltered data
@@ -50,7 +50,7 @@ function RegisteredEmployees() {
     try {
       // Make a request to update the verification status
       const response = await axios.put(
-        `http://localhost:3001/api/verifyEmployee/${employeeId}`,
+        `https://drugabuseprev-deploy.onrender.com/api/verifyEmployee/${employeeId}`,
         {
           verified: !currentStatus,
         }
@@ -87,7 +87,7 @@ function RegisteredEmployees() {
             OR you can  WhatsApp 'join flame-color to +14155238886 to start getting reports on your phone number.'
           `;
 
-      await axios.post('http://localhost:3001/api/send-email', {
+      await axios.post('https://drugabuseprev-deploy.onrender.com/api/send-email', {
         to: email,
         subject: emailSubject,
         text: emailText,
